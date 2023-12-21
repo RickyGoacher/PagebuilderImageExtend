@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type
+        name="image"
+        preview_component="PagebuilderExtend_PagebuilderImageExtend/js/content-type/image/preview">
+        <breakpoints>
+            <breakpoint name="mobile">
+                <form>pagebuilder_image_form_mobile</form>
+            </breakpoint>
+        </breakpoints>
+        <appearances>
+            <appearance name="full-width"
+                        preview_template="PagebuilderExtend_PagebuilderImageExtend/content-type/image/full-width/preview"
+                        master_template="PagebuilderExtend_PagebuilderImageExtend/content-type/image/full-width/master">
+                <elements>
+                    <element name="main">
+                        <attribute name="aspect_ratio_select_field" source="aspect_ratio_select_field"/>
+                        <attribute name="aspect_ratio_select_mobile_field" source="aspect_ratio_select_mobile_field"/>
+                        <style name="image_aspect_ratio" source="aspect-ratio"/>
+                    </element>
+                    <element name="main_mobile">
+                        <style name="text_align" source="text_align"/>
+                        <style name="display" source="display" converter="Magento_PageBuilder/js/converter/style/display" preview_converter="Magento_PageBuilder/js/converter/style/preview/display"/>
+                        <style name="margins" storage_key="margins_and_padding" reader="Magento_PageBuilder/js/property/margins" converter="Magento_PageBuilder/js/converter/style/margins"/>
+                        <style name="padding" storage_key="margins_and_padding" reader="Magento_PageBuilder/js/property/paddings" converter="Magento_PageBuilder/js/converter/style/paddings"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <style name="image_aspect_ratio" source="aspect-ratio"/>
+                        <css name="css_classes"/>
+                    </element>
+                    <element name="desktop_image_new">
+                        <style name="image_width" source="width"/>
+                        <style name="image_height" source="height"/>
+                        <style name="border" source="border_style" converter="Magento_PageBuilder/js/converter/style/border-style"/>
+                        <style name="border_color" source="border_color"/>
+                        <style name="border_width" source="border_width" converter="Magento_PageBuilder/js/converter/style/border-width"/>
+                        <style name="border_radius" source="border_radius" converter="Magento_PageBuilder/js/converter/style/remove-px"/>
+                        <attribute name="image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                    </element>
+                    <element name="mobile_image_new">
+                        <style name="image_width" source="width"/>
+                        <style name="image_height" source="height"/>
+                        <style name="border" source="border_style" converter="Magento_PageBuilder/js/converter/style/border-style"/>
+                        <style name="border_color" source="border_color"/>
+                        <style name="border_width" source="border_width" converter="Magento_PageBuilder/js/converter/style/border-width"/>
+                        <style name="border_radius" source="border_radius" converter="Magento_PageBuilder/js/converter/style/remove-px"/>
+                        <attribute name="mobile_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+    </type>
+</config>

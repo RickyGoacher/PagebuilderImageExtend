@@ -1,0 +1,31 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<div class="pagebuilder-content-type pagebuilder-image type-nested" event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+    <render args="getOptions().template" ></render>
+    <figure attr="Object.assign({}, data.main.attributes())" ko-style="Object.assign({}, getViewportImageAspectRatioData().style(), !data.desktop_image_new.attributes().src ? {} : {borderStyle: 'none'})" css="getViewportImageAspectRatioData().css">
+        <scope args="getUploader().getUiComponent()">
+            <render ></render>
+        </scope>
+        <img if="getViewportImageData().attributes().src"
+             attr="getViewportImageData().attributes"
+             class="preview-image"
+             css="getViewportImageData().css"
+             ko-style="Object.assign({}, getViewportImageData().style(), getViewportImageAspectRatioData().style())" />
+        <!-- ko if: data.caption.html() -->
+        <!-- ko with: data.caption -->
+        <!-- ko with: {attributes: attributes, css: css, dataCaptionUnsanitizedHtml: html, style: style} -->
+        <figcaption attr="attributes"
+                    css="css"
+                    html="dataCaptionUnsanitizedHtml"
+                    ko-style="style">
+        </figcaption>
+        <!-- /ko -->
+        <!-- /ko -->
+        <!-- /ko -->
+    </figure>
+</div>

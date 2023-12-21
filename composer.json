@@ -1,0 +1,19 @@
+{
+    "name": "PagebuilderExtend_PagebuilderImageExtend",
+    "version": "0.0.1",
+    "description": "Page Builder content type for PagebuilderImageExtend.",
+    "require": {
+        "magento/framework": "*",
+        "magento/module-page-builder": "*",
+        "php": "~7.3.0||~7.4.0||~8.0.1"
+    },
+    "type": "magento2-module",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    }
+}

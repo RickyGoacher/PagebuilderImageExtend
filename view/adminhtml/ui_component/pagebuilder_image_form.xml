@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <!-- Full Form: Magento/PageBuilder/view/adminhtml/ui_component/pagebuilder_image_form.xml -->
+    <fieldset name="general">
+        <field name="aspect_ratio_select_field" sortOrder="19" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="default" xsi:type="string">disabled</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <label translate="true">Enable Aspect Ratio (Desktop)</label>
+                <dataScope>aspect_ratio_select_field</dataScope>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options>
+                            <option name="0" xsi:type="array">
+                                <item name="value" xsi:type="string">enabled</item>
+                                <item name="label" xsi:type="string" translate="true">Enable</item>
+                            </option>
+                            <option name="1" xsi:type="array">
+                                <item name="value" xsi:type="string">disabled</item>
+                                <item name="label" xsi:type="string" translate="true">Disable</item>
+                            </option>
+                        </options>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+        <field name="image_aspect_ratio" sortOrder="20" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="disabledValues" xsi:type="array">
+                        <item name="none" xsi:type="string">disabled</item>
+                    </item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Aspect Ratio Desktop (num/num)</label>
+                <notice translate="true">Sets the aspect ratio for the image.</notice>
+                <additionalClasses>
+                    <class name="admin__field-small">true</class>
+                </additionalClasses>
+                <addAfter translate="true">1/2</addAfter>
+                <tooltip>
+                    <description translate="true">
+                        <![CDATA[
+                        <p>Style changes will only affect this breakpoint - Change view to adjust for Mobile</p>
+                        ]]>
+                    </description>
+                </tooltip>
+                <imports>
+                    <link name="setDisabled">ns = ${ $.ns }, index = aspect_ratio_select_field:value</link>
+                </imports>
+            </settings>
+        </field>
+        <field name="image_width" sortOrder="21" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="disabledValues" xsi:type="array">
+                        <item name="none" xsi:type="string">enabled</item>
+                    </item>
+                    <item name="default" xsi:type="string">100%</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Image Width Desktop (% / px)</label>
+                <notice translate="true">Sets the width for the image.</notice>
+                <additionalClasses>
+                    <class name="admin__field-small">true</class>
+                </additionalClasses>
+                <tooltip>
+                    <description translate="true">
+                        <![CDATA[
+                        <p>Style changes will only affect this breakpoint - Change view to adjust for Mobile</p>
+                        ]]>
+                    </description>
+                </tooltip>
+                <imports>
+                    <link name="setDisabled">ns = ${ $.ns }, index = aspect_ratio_select_field:value</link>
+                </imports>
+            </settings>
+        </field>
+        <field name="image_height" sortOrder="22" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="disabledValues" xsi:type="array">
+                        <item name="none" xsi:type="string">enabled</item>
+                    </item>
+                    <item name="default" xsi:type="string">auto</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Image Height Desktop (px)</label>
+                <notice translate="true">Sets the height for the image.</notice>
+                <additionalClasses>
+                    <class name="admin__field-small">true</class>
+                </additionalClasses>
+                <tooltip>
+                    <description translate="true">
+                        <![CDATA[
+                        <p>Style changes will only affect this breakpoint - Change view to adjust for Mobile</p>
+                        ]]>
+                    </description>
+                </tooltip>
+                <imports>
+                    <link name="setDisabled">ns = ${ $.ns }, index = aspect_ratio_select_field:value</link>
+                </imports>
+            </settings>
+        </field>
+    </fieldset>
+</form>
